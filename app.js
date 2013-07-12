@@ -12,9 +12,9 @@ var UserSchema = mongoose.Schema({
     facebook: {}
 });
 
-var UserModel = mongoose.model('UserModel', UserSchema);
 
 mongoose.connect('mongodb://127.0.0.1/mymongodb');
+var UserModel = mongoose.model('UserModel', UserSchema);
 
 everyauth.everymodule.findUserById(function(objId,callback) {
      UserModel.findById(objId, function(err, user){
@@ -46,8 +46,8 @@ var findOrCreateFBUser = function(session, accessToken, accessTokExtra, fbUserMe
 }
 
 everyauth.facebook
-    .appId('144772812392904')
-    .appSecret('90c2e3d9829758a8c6bbc6b0990146fe')
+    .appId('your appId')
+    .appSecret('your appSecret')
     .scope('email,user_location,user_photos,publish_actions')
     .handleAuthCallbackError( function (req, res) {
         res.send('Error occured');
