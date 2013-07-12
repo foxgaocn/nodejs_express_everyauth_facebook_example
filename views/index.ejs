@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>everyauth demo</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Welcome to the demo</h1>
+    <% if(everyauth.loggedIn) { %>
+    	<p>you are logged in as <%=everyauth.user.name%></p>
+    <% } else { %>
+    	<p><a href="auth/facebook" class="facebook">Login with Facebook</a></p>
+    <% } %>
+  </body>
+</html>
+
